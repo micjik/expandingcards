@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expanding Cards</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <main>
+        <div class="container first">
+            <div><img src="assets/explore-img.avif" class="img-class" alt="explore the world image"></div>
+            <h3>Explore the World</h3>
+        </div>
+        <div >
+            <div><img src="assets/wildforest-img.webp" class="img-class"  alt="wildforest-img"></div>
+            <h3>Wild Forest</h3>
+        </div>
+        <div>
+            <div><img src="assets/sunnybeach-img.avif" class="img-class"  alt="sunny beach image"></div>
+            <h3>Sunny Beach</h3>
+        </div>
+        <div>
+            <div><img src="assets/citywinter-img.avif" class="img-class" alt="city on winters image"></div>
+            <h3>City on Winter</h3>
+        </div>
+        <div>
+            <div><img src="assets/mountain-cloud-img.webp" class="img-class"  alt="mountain cloud image"></div>
+            <h3>Mountain - Clouds</h3>
+        </div>
+    </main>
+
+    <script>
+        let imgClasses = document.querySelectorAll('.img-class');
+
+        imgClasses.forEach(imgClass => {
+            imgClass.addEventListener('click', ()=> {
+                imgClass.classList.add('first-child')
+            }),
+            imgClass.removeEventListener('first')
+        })
+
+        
+    </script>
+</body>
+</html>

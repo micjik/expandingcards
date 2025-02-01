@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener</title>
+    
+</head>
+<style>
+    body{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+    .outer-box {
+        height: 400px;
+        width: 300px;
+        background-color: red;
+        margin: 0 auto;
+        position:relative;
+
+    }
+    .middle-box{
+        height: 300px;
+        width: 200px;
+        background-color: blue;
+        position: absolute;
+        top:12%;
+        left:18%;
+
+
+
+
+    }
+    .inner-box{
+        height: 200px;
+        width: 100px;
+        background-color: green;
+        position:absolute;
+        top:18%;
+        left:25%;
+        
+
+    }
+</style>
+<body>
+    <div class="outer-box">
+        <div class="middle-box">
+            <div class="inner-box"></div>
+        </div>
+    </div>
+
+    <script>
+    let grandparent = document.querySelector(".outer-box");
+    let parent = document.querySelector(".middle-box");
+    let child = document.querySelector(".inner-box");
+
+    //bubbling starts from the inner element and bubbles to the outer element
+  /*
+    grandparent.addEventListener('click', e=> {
+        console.log('grandparent bubble')
+    })
+    /*grandparent.addEventListener('click', e=> {
+        console.log('grandparent captured')
+    }, { capture:true})
+    */
+     /*
+     parent.addEventListener('click', e=> {
+        console.log('parent bubble')
+    })
+
+    /* parent.addEventListener('click', e=> {
+        console.log('parent captured')
+        e.stopPropagation()
+    }, { capture: true})*/
+
+    /* child.addEventListener('click', printHi)
+
+     setTimeout(()=> {
+     child.removeEventListener('click', printHi)}, 2000)
+    /*child.addEventListener('click', e=> {
+        console.log('child capture')
+    }, { capture:true})*/
+
+    /* document.addEventListener('click', (e)=> {
+        console.log('document captured')
+    }, {capture: true})*/
+
+  /*  document.addEventListener('click', (e)=> {
+        console.log('document bubble')
+    })
+
+   /* function printHi() {
+    console.log('Hi')}*/
+
+    const divs = document.querySelectorAll('div')
+    divs.forEach(div => {
+    div.addEventListener('click', (e)=> {
+    console.log('hi')
+    })})
+
+    const newDiv = document.createElement('div');
+    newDiv.style.height = "200px";
+    newDiv.style.width ="200px";
+    newDiv.backgroundColor = 'purple';
+
+    document.body.append(newDiv);
+    </script>
+</body>
+</html>
